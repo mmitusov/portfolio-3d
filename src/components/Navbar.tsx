@@ -1,6 +1,11 @@
+import { navLinks } from "@/config"
+import { logo, menu, close } from "../../public/media"
+
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <nav>
+      Test
+    </nav>
   )
 }
 
