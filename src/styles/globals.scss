@@ -4,6 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './utilityClasses.module.scss'; 
 
 /* Basic styles */
 * {
