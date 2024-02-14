@@ -1,3 +1,4 @@
+"use client";
 import * as Components from '@/components';
 const { About, Contact, Experience, Feedbacks, Hero, Loader, Navbar, Tech, Works } = Components;
 
