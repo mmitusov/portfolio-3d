@@ -6,7 +6,11 @@ const Navbar = () => {
   return (
     <nav className="paddingX w-full flex items-center p-5 fixed top-0 z-20 bg-primary">
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link href="/" className="flex items-center gap-2">
+        <Link 
+          href="/" 
+          onClick={() => }
+          className="flex items-center gap-2"
+        >
           Test
         </Link>
       </div>
