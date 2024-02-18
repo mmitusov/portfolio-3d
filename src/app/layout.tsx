@@ -5,8 +5,11 @@ import '../styles/globals.scss'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'My portfolio',
-  description: 'Created with Next.js',
+  title: 'Maksym | Portfolio',
+  description: 'Maksym Mitusov | Portfolio',
+  icons: {
+    icon: '/media/logo1.svg',
+  },
 };
 
 export default function RootLayout({
