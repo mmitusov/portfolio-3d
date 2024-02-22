@@ -27,3 +27,5 @@ import * as Components from '@/components';
 const { Navbar, About, etc.. } = Components;
 ```
 3. P.S. Ну или же импортировать каждый компонент по одиночке отдельно, а не батчем.  
+
+НУЖНО ДОБАВИТЬ ГЛОБАЛЬНЫЙ СТЕЙТ
