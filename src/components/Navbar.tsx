@@ -1,8 +1,8 @@
+import { useState } from "react"
+import Link from "next/link"
+import Image from "next/image"
 import { navLinks } from "@/config"
 import { logo, menu, close } from "../../public/media"
-import Link from "next/link"
-import { useState } from "react"
-import Image from "next/image"
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('')
