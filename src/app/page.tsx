@@ -5,7 +5,7 @@ const { About, Contact, Experience, Feedbacks, Hero, Loader, Navbar, Tech, Works
 export default function Home() {
   return ( 
     <main className="relative z-0 bg-primary text-white">
-      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center"> {/* We created 'bg-hero-pattern' inside tailwind.config.ts */}
         <Navbar />
         <Hero />
       </div>
