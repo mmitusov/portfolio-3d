@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
+        'hero-pattern': "url('/media/herobg.png')", // It automatically start's search path from the 'public' folder
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
