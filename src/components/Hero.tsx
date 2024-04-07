@@ -12,10 +12,15 @@ const Hero = () => {
         </div>
 
         {/* Main text */}
-        <div>
-          <h1>Hi, I am <span className="text-[#915eff]">Maksym</span></h1>
+        <div className="">
+          <h1 className="heroHeadText text-white">Hi, I am <span className="text-[#915eff]">Maksym</span></h1>
+          <p className="heroSubText mt-2 text-white-100 max-w-[700px]">
+            I am passionate Full Stack JavaScript developer, that is passionate in both web development and AI.
+          </p>
         </div>
       </div>
+
+        <ComputersCanvas />
     </section>
   )
 }
