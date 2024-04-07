@@ -10,6 +10,11 @@ const Hero = () => {
           <div className="w-5 h-5 rounded-full bg-[#915eff]" />
           <div className="w-1 sm:h-80 h-40 violet-gradient"/>
         </div>
+
+        {/* Main text */}
+        <div>
+          <h1>Hi, I am <span className="text-[#915eff]">Maksym</span></h1>
+        </div>
       </div>
     </section>
   )
