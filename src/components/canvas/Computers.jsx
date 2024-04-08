@@ -1,15 +1,17 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber"; //Просто пустой канвас в который мы можем что-то поместить
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei"; //Вспомогательные инструменты которыми мы будем "рисовать" на пустом канвасе. "useGLTF" помогает ипортировать 3D модели
 
+// We can not use HTML tags inside the canvas. To solve this, we wraped the CanvasLoader inside "import { Html } from "@react-three/drei";"
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  // Не забываем, что абсолютный путь в Next.js автоматически начинается с папки 'public'. Поэтому путь к файлу выглядет следующим образом 
+  const computer = useGLTF("/desktop_pc/scene.gltf");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      <hemisphereLight intensity={2} groundColor='black' />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
