@@ -19,7 +19,8 @@
     "react-dom": "^18",
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
-    "sass": "^1.70.0"
+    "sass": "^1.70.0",
+    "three": "^0.163.0"
   },
   "devDependencies": {
     "@types/node": "^20",
