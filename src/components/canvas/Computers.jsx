@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber"; //Просто пустой канвас в который мы можем что-то поместить
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei"; //Вспомогательные инструменты которыми мы будем "рисовать" на пустом канвасе. "useGLTF" помогает ипортировать 3D модели
 
@@ -9,6 +9,8 @@ const Computers = ({ isMobile }) => {
   // Не забываем, что абсолютный путь в Next.js автоматически начинается с папки 'public'. Поэтому путь к файлу выглядет следующим образом 
   const computer = useGLTF("/desktop_pc/scene.gltf");
 
+  //Работая с ThreeJS вместо <div> мы используем <mesh>. Внутри <mesh> важно создать освещение, иначе мы ничего не будем видеть
+  // Чтобы отобразить модельку, далее мы должны поместить ее внутри Canvas. Не обязательно, но создадим ниже отдельный компонентик для этого
   return (
     <mesh>
       <hemisphereLight intensity={2} groundColor='black' />
@@ -31,6 +33,9 @@ const Computers = ({ isMobile }) => {
   );
 };
 
+// Потренеруемся использовать Suspense, чтобы скорость отображения изначальной страницы не зависила от 3D моделек (загружается базовая страница, а модельки уже подгрузятся как будут готовы)
+// Быстрее и удобнее было бы подгружать 3D модельки используя SSR, но по приколу потренеруемся с Suspense
+// OrbitControls - помогает крутить нашу модельку (делает ее интерактивной)
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
