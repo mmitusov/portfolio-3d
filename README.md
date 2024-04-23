@@ -35,3 +35,4 @@ const { Navbar, About, etc.. } = Components;
 
 НУЖНО ДОБАВИТЬ ГЛОБАЛЬНЫЙ СТЕЙТ
 https://github.com/mmitusov/music-platform-nestjs-nextjs/tree/master/frontend-next-js/src/store
+
