@@ -1,3 +1,5 @@
+import SectionWrapper from './hoc/SectionWrapper'
+import Image from 'next/image'
 import { Tilt } from 'react-tilt'
 import { motion } from "framer-motion"
 import { services } from '@/config'
@@ -6,9 +8,8 @@ import { fadeIn, textVariant } from '@/utils/motion'
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant(2)}>
-        <p className='sectionSubText'>Introduction</p>
-        <h2 className='sectionHeadText'>Overview</h2>
+      <motion.div variants={textVariant(0.25)}>
+        <h2 className='sectionHeadText'>Introduction</h2>
       </motion.div>
 
       <motion.p
@@ -25,8 +26,13 @@ const About = () => {
         <br/> <br/>
         🚀 Let's get in touch and explore the ever-evolving landscape of web development together!
       </motion.p>
+
+      {/* Прописывая анимацию контента внутри наших карточек воспользуемся "index * 0.5", чтобы анимация каждой последующей карточки появлялась по очереди с одинаковой задержкой */}
+      <div className='mt-20 flex flex-wrap gap-10'>
+       
+      </div>
     </>
   )
 }
 
-export default About
+export default SectionWrapper(About, "about")
