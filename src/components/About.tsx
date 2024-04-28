@@ -29,7 +29,35 @@ const About = () => {
 
       {/* Прописывая анимацию контента внутри наших карточек воспользуемся "index * 0.5", чтобы анимация каждой последующей карточки появлялась по очереди с одинаковой задержкой */}
       <div className='mt-20 flex flex-wrap gap-10'>
-       
+        {services.map((service, index) => (
+          <Tilt 
+            key={service.title} 
+            className='xs:w-[250px] w-full'
+            options={{
+              max: 30,
+              scale: 1.1,
+              speed: 450,
+            }}
+          >
+            <motion.div
+              variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+              className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+            >
+              <div
+                className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+              >
+                <Image
+                  src={service.icon}
+                  alt='web-development'
+                  className='w-16 h-16 object-contain'
+                />
+                <h3 className='text-white text-[20px] font-bold text-center'>
+                  {service.title}
+                </h3>
+              </div>
+            </motion.div>
+          </Tilt>
+        ))}
       </div>
     </>
   )
