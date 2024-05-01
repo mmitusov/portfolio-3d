@@ -12,6 +12,9 @@ const SectionWrapper = (Component: any, sectionId: string) => {
         viewport={{ once: true, amount: 0.25 }}
         className={`padding max-w-7xl mx-auto relative z-0`}
       >
+        <span className='hash-span' id={sectionId}>
+          &nbsp; {/* Render empty space */}
+        </span>
 
         <Component />
       </motion.section>
