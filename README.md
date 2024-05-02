@@ -37,4 +37,3 @@ HOC (Higher Order Component) `SectionWrapper.tsx`
 
 НУЖНО ДОБАВИТЬ ГЛОБАЛЬНЫЙ СТЕЙТ
 https://github.com/mmitusov/music-platform-nestjs-nextjs/tree/master/frontend-next-js/src/store
-
