@@ -76,7 +76,7 @@ export const slideIn = (direction: string, type: string, delay: number, duration
   };
 };
 
-export const staggerContainer = (staggerChildren, delayChildren) => {
+export const staggerContainer = (staggerChildren?: any, delayChildren?: any) => {
   return {
     hidden: {},
     show: {

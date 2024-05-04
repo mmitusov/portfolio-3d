@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { staggerContainer } from "../../utils/motion";
 
-// HOC - это функция, что возвращает функцию, что возвращает компонент.
-const SectionWrapper = (Component: any, sectionId: string) => {
+// HOC - это функция, что возвращает функцию, что возвращает компонент
+// React.ComponentType - типизация входящих Реакт компонентов 
+const SectionWrapper = (Component: React.ComponentType, sectionId: string) => {
   return function HOC() {
     return (
       <motion.section
