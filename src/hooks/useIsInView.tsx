@@ -11,7 +11,7 @@ const useIsInView = (ref: RefObject<Element>): boolean => {
       {
         root: null, // viewport
         rootMargin: '0px', // no margin
-        threshold: 0.1, // 50% of target visible
+        threshold: 0.1, // when 10% of target is visible
       }
     );
 
