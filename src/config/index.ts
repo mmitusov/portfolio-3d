@@ -15,15 +15,22 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
+  newline,
+  argus,
   carrent,
   jobit,
   tripguide,
   threejs,
 } from "../../public/media";
+
+interface experiencesType {
+  title: string,
+  company_name: string,
+  icon: any,
+  iconBg: string,
+  date: string,
+  points: string[]
+}
 
 export const navLinks = [
   {
@@ -114,26 +121,13 @@ const technologies = [
   },
 ];
 
-const experiences = [
+const experiences: experiencesType[] = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "AI Full Stack Engineer",
+    company_name: "newline",
+    icon: newline,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Oct. 2023 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -142,11 +136,11 @@ const experiences = [
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "Middle Full Stack JS Developer",
+    company_name: "Argus Soft",
+    icon: argus,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Now. 2022 - Oct. 2023",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -155,11 +149,11 @@ const experiences = [
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    title: "Full Stack JS Developer (React.js, Node.js)",
+    company_name: `PE "Skyba P.V."`,
+    icon: "",
+    iconBg: "#383E56",
+    date: "Aug. 2020 - Now. 2022",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
