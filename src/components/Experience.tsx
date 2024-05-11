@@ -12,6 +12,10 @@ import { experiences } from '@/config'
 import { textVariant } from '@/utils/motion'
 import Image from "next/image";
 
+// Чтобы и заморачиваться, оспользуемся готовой библиотекой для отображения нашего опыта работы
+// Компонент библиотеки имеет параметр "visible={}". 
+// И желательно мы хотим чтобы ее елементы появлялись с анимацией, только когда мы до них доскролим, а не сразу во время рендера
+// Для этого создадим кастомный хук useIsInView. И как только мы доскролим до секции Experience, он поменяет ее параметр на "visible={true}"
 const Experience = () => {
   const timelineElementRef = useRef<HTMLInputElement | null>(null);
   const isInView = useIsInView(timelineElementRef);
@@ -19,11 +23,8 @@ const Experience = () => {
   return (
     <div ref={timelineElementRef}>
       <motion.div variants={textVariant(0.25)}>
-        <p className={`sectionSubText text-center`}>
-          What I have done so far
-        </p>
         <h2 className={`sectionHeadText text-center`}>
-          Work Experience.
+          Work Experience
         </h2>
       </motion.div>
 
@@ -42,13 +43,16 @@ const Experience = () => {
               date={experience.date}
               iconStyle={{ background: experience.iconBg }}
               icon={
-                <div className='flex justify-center items-center w-full h-full'>
-                  <Image
-                    src={experience.icon}
-                    alt="experience.company_name"
-                    className='w-[70%] h-[60%] object-contain'
-                  />
-                </div>
+                experience.icon ?
+                  <div className='flex justify-center items-center w-full h-full'>
+                    <Image
+                      src={experience.icon}
+                      alt="experience.company_name"
+                      className='w-[75%] h-[75%] object-contain'
+                    />
+                  </div>
+                : 
+                  <div />
               }
             >
               <div>
