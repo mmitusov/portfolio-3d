@@ -3,24 +3,25 @@ import {
   backend,
   creator,
   web,
-  javascript,
-  typescript,
-  html,
   css,
+  docker,
+  figma,
+  git,
+  html,
+  javascript,
+  mongodb,
+  nodejs,
   reactjs,
   redux,
   tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
+  typescript,
+  threejs,
   newline,
   argus,
   carrent,
   jobit,
   tripguide,
-  threejs,
+  github,
 } from "../../public/media";
 
 interface experiencesType {
@@ -30,6 +31,23 @@ interface experiencesType {
   iconBg: string,
   date: string,
   points: string[]
+}
+
+interface projectsType {
+  name: string
+  description: string
+  tags: any[]
+  image: any
+  project_link_logo?: any
+  source_code_link: string
+}
+
+interface testimonialsType {
+    testimonial: string
+    name: string
+    designation: string
+    company: string
+    image: string
 }
 
 export const navLinks = [
@@ -163,7 +181,7 @@ const experiences: experiencesType[] = [
   },
 ];
 
-const testimonials = [
+const testimonials: testimonialsType[] = [
   {
     testimonial:
       "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
@@ -190,7 +208,7 @@ const testimonials = [
   },
 ];
 
-const projects = [
+const projects: projectsType[] = [
   {
     name: "Car Rent",
     description:
@@ -210,6 +228,7 @@ const projects = [
       },
     ],
     image: carrent,
+    project_link_logo: github,
     source_code_link: "https://github.com/",
   },
   {
