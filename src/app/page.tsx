@@ -1,6 +1,8 @@
 "use client";
+
+import { StarsCanvas } from '@/components/canvas';
 import * as Components from '@/components';
-const { About, Contact, Experience, Feedbacks, Hero, Loader, Navbar, Tech, Work } = Components;
+const { Navbar, Hero, About, Experience, Tech, Work, Feedback, Contact } = Components;
 
 export default function Home() {
   return ( 
@@ -14,10 +16,11 @@ export default function Home() {
       <Experience />
       <Tech />
       <Work />
-      <Feedbacks />
+      <Feedback />
 
       <div className='relative z-0'>
         <Contact />
+        <StarsCanvas />
       </div>
     </main>
   )
