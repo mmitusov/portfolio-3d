@@ -9,7 +9,7 @@ import { slideIn } from '@/utils/motion'
 
 const Contact = () => {
   const formRef = useRef(null);
-  const [form, setForm] = useState({
+  const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
     message: "",
@@ -20,8 +20,8 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    setForm({
-      ...form,
+    setContactForm({
+      ...contactForm,
       [name]: value,
     });
   };
@@ -49,7 +49,7 @@ const Contact = () => {
             <input
               type='text'
               name='name'
-              value={form.name}
+              value={contactForm.name}
               onChange={handleChange}
               placeholder="What's your good name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
@@ -60,7 +60,7 @@ const Contact = () => {
             <input
               type='email'
               name='email'
-              value={form.email}
+              value={contactForm.email}
               onChange={handleChange}
               placeholder="What's your web address?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
@@ -72,7 +72,7 @@ const Contact = () => {
               rows={7}
               maxLength={ 1000 }
               name='message'
-              value={form.message}
+              value={contactForm.message}
               onChange={handleChange}
               placeholder='What you want to say?'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
