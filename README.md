@@ -38,12 +38,20 @@ const { Navbar, About, etc.. } = Components;
 
 Следующая на очереди - секция "Tech". Сдесь отобразим 3D шарики с картинками технологий. Важно заметить, что "useTexture" принимает пареметром только путь к картике в виде строки. А Next.js по дефолту импортирует картинки как объект. Но один из параметров этого объекта - это нужный нам путь к картике. А точнее - `icon.src`. Им и воспользовались.
 
-Следующая на очереди - секция "Feedback".
-`<div className={`paddingX -mt-20 pb-14 flex flex-wrap gap-7`}>` `-mt-20`
+Следующая на очереди - секция "Feedback". Для карточек с фидбеком применим отрецательную маржу `-mt-20`. Таким образом контейнер с карточками залезет на соседний контейнер и создаст эффект будто два елемента накладываются друг на друга.
 
-Следующая на очереди - секция "Contact".
-useRef() + `value={form.message}`, а как же useState? + StarsCanvas absolute
-Нужно разобраться как работает ивент. 
+Следующая на очереди - секция "Contact". Вместо того чтобы создавать стейт под каждый инпут, мы будем хранить инфу в одном стейте, в виде объекта. Где имя секции и ее инпут мы будем брать из ивента и сохранять все как ключ-пару. 
+
+Разберем сам момент сохранения иразницу между `[name]: value` и `name: value`
+```
+const updatedForm = {
+  ...contactForm,
+  [name]: value  // This dynamically sets the key based on the variable `name`
+};
+```
+- `[name]: value` This syntax allows you to dynamically set a property on the object using the value of the name variable (it dynamically checks if the key already exists in the object). If the name already exists as a key in the object, it updates the value. If it doesn't exist, it adds a new key-value pair.
+- `name: value` This syntax always creates a key named "name" (a literal string key), regardless of whether it's adding a new key or updating an existing one. This is not dynamic and does not use the value of the name variable.
+So, to dynamically set a key based on a variable: Use `[name]: value`. To set a key named "name": Use `name: value`.
 
 НУЖНО ДОБАВИТЬ ГЛОБАЛЬНЫЙ СТЕЙТ
 https://github.com/mmitusov/music-platform-nestjs-nextjs/tree/master/frontend-next-js/src/store
