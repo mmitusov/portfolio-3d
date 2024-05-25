@@ -2,15 +2,20 @@
 const nextConfig = {
   //Here is "Next config" if you want to display any images in nextjs app from accross the internet
   images: {
-      domains: ['localhost'],
-      remotePatterns: [
-          {
-              protocol: 'https',
-              hostname: '**',
-              port: '',
-              pathname: '**',
-          },
-      ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'localhost',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**',
+        port: '',
+        pathname: '**',
+      },
+    ],
   }
 }
 
