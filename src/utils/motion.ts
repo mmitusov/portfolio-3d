@@ -61,7 +61,7 @@ export const slideIn = (direction: string, type: string, delay: number, duration
   return {
     hidden: {
       x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
-      y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
+      y: direction === "up" ? "-200%" : direction === "down" ? "200%" : 0,
     },
     show: {
       x: 0,
