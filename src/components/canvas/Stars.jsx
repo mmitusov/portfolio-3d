@@ -8,8 +8,8 @@ const Stars = () => {
   const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.2 }));
 
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+    ref.current.rotation.x -= delta / 50; // Adjust the rotation speed for x-axis
+    ref.current.rotation.y -= delta / 55; // Adjust the rotation speed for y-axis
   });
 
   return (
