@@ -1,6 +1,9 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { motion } from "framer-motion";
+
+import { slideIn } from "@/utils/motion";
 import { navLinks } from "@/config"
 import { logo, menu, close } from "../../public/media"
 
@@ -9,26 +12,37 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
 
   return (
-    <nav className="paddingX py-4 w-full flex items-center fixed top-0 z-20 bg-primary">
+    <motion.nav
+      initial='hidden' whileInView='show'
+      className="paddingX py-4 w-full flex items-center fixed top-0 z-20 bg-primary"
+    >
       <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
 
         {/* Logo */}
-        <Link 
-          href="/" 
-          onClick={() => {setActiveLink(''); window.scrollTo(0,0)}}
-          className="flex items-center gap-2"
+        {/* Для Link плавный переход на ссылку не работает. Работает только на id. Можно попытаться использовать 'next/router' */}
+        <motion.div
+          variants={slideIn("up", "tween", 0.2, 1)}
         >
-          <Image
-            src={logo}
-            height={45}
-            alt="logo"
-            className="object-contain"
-          />
-          <p className="flex text-white text-[18px] font-bold cursor-pointer">Maksym Mitusov</p>
-        </Link>
+          <Link 
+            href="/" 
+            onClick={() => {setActiveLink(''); window.scrollTo(0,0)}} 
+            className="flex items-center gap-2"
+          >
+            <Image
+              src={logo}
+              height={45}
+              alt="logo"
+              className="object-contain"
+            />
+            {/* <p className="flex text-white text-[18px] font-bold cursor-pointer">Maksym Mitusov</p> */}
+          </Link>
+        </motion.div>
 
         {/* Navigation menu desktop */}
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <motion.ul
+          variants={slideIn("up", "tween", 0.2, 1)}
+          className="list-none hidden sm:flex flex-row gap-10"
+        >
           {navLinks.map((link) => (
             <li 
               key={link.id}
@@ -44,7 +58,7 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-        </ul>
+        </motion.ul>
 
         {/* Navigation menu mobile (burger menu) */}
         <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -83,7 +97,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 
