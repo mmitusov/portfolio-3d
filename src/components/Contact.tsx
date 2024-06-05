@@ -1,32 +1,52 @@
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { EarthCanvas } from "./canvas";
 import SectionWrapper from './hoc/SectionWrapper';
 import { slideIn } from '@/utils/motion'
 
 const Contact = () => {
-  const formRef = useRef(null);
+  const [loading, setLoading] = useState(false);
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const [loading, setLoading] = useState(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    setContactForm({
-      ...contactForm,
-      [name]: value,
-    });
+    setContactForm(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = () => {}
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+
+    try {
+      const res = await fetch('/api/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactForm),
+      });
+
+      if (res.ok) {
+        setLoading(false)
+        setContactForm({
+          name: "",
+          email: "",
+          message: "",
+        })
+        alert('Email sent successfully');
+      } else {
+        alert('Error sending email');
+      }
+    } catch (error) {
+      alert('Error sending email');
+    }
+  }
 
   return (
     <div
@@ -40,7 +60,6 @@ const Contact = () => {
         <h3 className='sectionHeadText'>Contact</h3>
 
         <form
-          ref={formRef}
           onSubmit={handleSubmit}
           className='mt-12 flex flex-col gap-8'
         >
