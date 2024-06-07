@@ -35,9 +35,9 @@ const About = () => {
             key={service.title} 
             className='xs:w-[250px] w-full'
             options={{
-              max: 30,
-              scale: 1.1,
-              speed: 450,
+              max: 15,
+              scale: 1.03,
+              speed: 2500,
             }}
           >
             <motion.div
