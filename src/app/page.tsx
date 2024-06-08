@@ -16,7 +16,7 @@ export default function Home() {
       <Experience />
       <Tech />
       <Work />
-      <Feedback />
+      {/* <Feedback /> */}
 
       <div className='relative z-0'>
         <Contact />
