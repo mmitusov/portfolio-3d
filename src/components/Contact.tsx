@@ -1,50 +1,47 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { EarthCanvas } from "./canvas";
 import SectionWrapper from './hoc/SectionWrapper';
 import { slideIn } from '@/utils/motion'
+import { useGetState } from "@/hooks/useGetState";
+import useGetAction from "@/hooks/useGetAction";
 
 const Contact = () => {
-  const [loading, setLoading] = useState(false);
-  const [contactForm, setContactForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [ loading, setLoading ] = useState(false);
+  const { setContactForm, resetContactForm } = useGetAction();
+  const { contactFormState } = useGetState();
+
+  const handleGetCV = () => {
+    window.open('/resume_pdf/Maksym_Mitusov_CV.pdf', '_blank');
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setContactForm(prev => ({ ...prev, [name]: value }));
+    setContactForm({name, value });
   };
   
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-
     try {
       const res = await fetch('/api/email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(contactForm),
+        body: JSON.stringify(contactFormState),
       });
 
       if (res.ok) {
-        setLoading(false)
-        setContactForm({
-          name: "",
-          email: "",
-          message: "",
-        })
-        alert('Email sent successfully');
+        setLoading(false);
+        resetContactForm();
+        alert('Email sent successfully!');
       } else {
-        alert('Error sending email');
+        alert('Error while sending email. Try onother time!');
       }
     } catch (error) {
-      alert('Error sending email');
+      alert('Error while sending email. Try onother time!');
     }
   }
 
@@ -55,9 +52,18 @@ const Contact = () => {
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
-      >
-        <p className='sectionSubText'>Get in touch</p>
-        <h3 className='sectionHeadText'>Contact</h3>
+      >       
+        <div className="flex flex-col sm:flex-row sm:items-center">
+          <p className='sectionSubText sm:mr-3 mb-3 sm:mb-0'>Want to get my CV in PDF?</p>
+          <button
+            onClick={ handleGetCV }
+            className='bg-black-500 py-3 px-3 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-secondary'
+          >
+            Download it now
+          </button>
+        </div>
+
+        <h3 className='sectionHeadText'>Contact me</h3>
 
         <form
           onSubmit={handleSubmit}
@@ -68,7 +74,7 @@ const Contact = () => {
             <input
               type='text'
               name='name'
-              value={contactForm.name}
+              value={contactFormState.name}
               onChange={handleChange}
               placeholder="What's your good name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
@@ -79,7 +85,7 @@ const Contact = () => {
             <input
               type='email'
               name='email'
-              value={contactForm.email}
+              value={contactFormState.email}
               onChange={handleChange}
               placeholder="What's your web address?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
@@ -89,9 +95,9 @@ const Contact = () => {
             <span className='text-white font-medium mb-4'>Your Message</span>
             <textarea
               rows={7}
-              maxLength={ 1000 }
+              maxLength={ 1500 }
               name='message'
-              value={contactForm.message}
+              value={contactFormState.message}
               onChange={handleChange}
               placeholder='What you want to say?'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
