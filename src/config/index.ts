@@ -16,6 +16,7 @@ import {
   tailwind,
   typescript,
   threejs,
+  openai,
   newline,
   argus,
   carrent,
@@ -93,10 +94,10 @@ const technologies = [
     name: "CSS 3",
     icon: css,
   },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
+  // {
+  //   name: "JavaScript",
+  //   icon: javascript,
+  // },
   {
     name: "TypeScript",
     icon: typescript,
@@ -121,36 +122,40 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
+  // {
+  //   name: "Three JS",
+  //   icon: threejs,
+  // },
   {
     name: "git",
     icon: git,
   },
-  {
-    name: "figma",
-    icon: figma,
-  },
+  // {
+  //   name: "figma",
+  //   icon: figma,
+  // },
   {
     name: "docker",
     icon: docker,
+  },
+  {
+    name: "openai",
+    icon: openai,
   },
 ];
 
 const experiences: experiencesType[] = [
   {
     title: "AI Full Stack Engineer",
-    company_name: "newline",
+    company_name: "/newline",
     icon: newline,
     iconBg: "#E6DEDD",
     date: "Oct. 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Doubled speed of candidate search and HR screening, by automating workflow of existing major processes with an AI. Including data scraping, data analysis and results sorting.",
+      "Used web-scraping techniques to provide LLM internet access, enabling automated SEO content optimization. This involved extracting and analyzing web data to enhance search engine visibility and improve online presence.",
+      "Developed and deployed a custom AI chatbot to chat with the educational courses data, using Next.js, FastAPI, LangChain, RAG and Chroma vector database. resulting in a 10% increase of customer satisfaction rate.",
+      "Building new web-pages and UI components using Next.js, Styled components, Tailwind CSS, Redux, etc.",
     ],
   },
   {
@@ -160,10 +165,10 @@ const experiences: experiencesType[] = [
     iconBg: "#383E56",
     date: "Now. 2022 - Oct. 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing high-quality full-stack applications from scratch and maintaining existing ones for EU and US clients.",
+      "Created AI web-chatbot from scratch using React.js, Sass, MongoDB, Firebase, FastAPI, LangChain and OpenAI API (GPT-4) with 100 unique daily users.",
+      "Developed a new front- and backend functionality for a NFT trading platform to gamify users spending process. Which helped to gain 2000 new unique users in 3 month and increased company revenue by $50k.",
+      "Created a corporate multi-language website from scratch with an adaptive layout, dynamic news page, maps, and feedback form.",
     ],
   },
   {
@@ -173,10 +178,11 @@ const experiences: experiencesType[] = [
     iconBg: "#383E56",
     date: "Aug. 2020 - Now. 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Software development for medium and small businesses.",
+      "Frontend architecture support/development using JS, React.js, HTML, SCSS.",
+      "Backend architecture support/development using Node.js, Express.js, REST API.",
+      "Software troubleshoot and debug.",
+      "Consulted in the redesign of a client’s website, resulting in a 20% increase in traffic.",
     ],
   },
 ];

@@ -29,7 +29,7 @@ const About = () => {
       </motion.p>
 
       {/* Прописываем анимацию контента внутри наших карточек воспользуемся "index * 0.5", чтобы анимация каждой последующей карточки появлялась по очереди с одинаковой задержкой */}
-      <div className='mt-20 flex flex-wrap gap-10'>
+      {/* <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
           <Tilt 
             key={service.title} 
@@ -59,7 +59,7 @@ const About = () => {
             </motion.div>
           </Tilt>
         ))}
-      </div>
+      </div> */}
     </>
   )
 }

@@ -15,8 +15,8 @@ const Hero = () => {
         {/* Main text */}
         <div className="">
           <h1 className="heroHeadText text-white">Hi, I am <span className="text-[#915eff]">Maksym</span></h1>
-          <p className="heroSubText mt-2 text-white-100 max-w-[700px]">
-            I am passionate Full Stack JavaScript developer, that is passionate in both web development and AI.
+          <p className="heroSubText mt-2 text-white-100 max-w-[750px]">
+            {`I am experienced AI Full Stack Engineer (TypeScript & Python), with more than 5+ years of professional journey behind my back`}
           </p>
         </div>
       </div>
