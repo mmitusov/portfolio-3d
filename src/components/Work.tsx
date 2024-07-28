@@ -2,7 +2,7 @@ import { Tilt } from 'react-tilt'
 import { motion } from "framer-motion";
 
 import SectionWrapper from './hoc/SectionWrapper';
-import { projects } from '@/config';
+import { workProjects } from '@/config';
 import { fadeIn, textVariant } from '@/utils/motion'
 import Image from 'next/image';
 
@@ -25,12 +25,12 @@ const Works = () => {
 
       <div className='mt-20 flex flex-wrap gap-7'>
 
-        {projects.map((project, index) => (
+        {workProjects.map((project, index) => (
           <motion.div key={`project-${index}`} variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
             <Tilt
               options={{
-                max: 10,
-                scale: 1.05,
+                max: 5,
+                scale: 1.02,
                 speed: 2000,
               }}
               className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
@@ -51,7 +51,7 @@ const Works = () => {
                       <Image
                         src={project.project_link_logo}
                         alt='source code'
-                        className='w-1/2 h-1/2 object-contain'
+                        className='w-[60%] h-auto object-contain'
                       />
                     </div>
                   </div>
