@@ -3,26 +3,31 @@ import {
   backend,
   creator,
   web,
-  css,
+  github,
+  internet,
   docker,
-  figma,
   git,
-  html,
-  javascript,
-  mongodb,
   nodejs,
   reactjs,
   redux,
-  tailwind,
   typescript,
-  threejs,
   openai,
+  graphql,
+  jest,
+  nestjs,
+  nextjs,
+  python,
+  css,
+  html,
+  figma,
+  mongodb,
+  tailwind,
   newline,
   argus,
-  carrent,
-  jobit,
-  tripguide,
-  github,
+  estating,
+  uhp,
+  apt,
+  pokmi,
 } from "../../public/media";
 
 interface experiencesType {
@@ -87,17 +92,9 @@ const services = [
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "Python",
+    icon: python,
   },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  // {
-  //   name: "JavaScript",
-  //   icon: javascript,
-  // },
   {
     name: "TypeScript",
     icon: typescript,
@@ -107,33 +104,33 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
     name: "Node JS",
     icon: nodejs,
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "Next.js",
+    icon: nextjs,
   },
-  // {
-  //   name: "Three JS",
-  //   icon: threejs,
-  // },
+  {
+    name: "Nest.js",
+    icon: nestjs,
+  },
+  {
+    name: "Redux Toolkit",
+    icon: redux,
+  },
+  {
+    name: "GraphQL",
+    icon: graphql,
+  },
+  {
+    name: "Jest",
+    icon: jest,
+  },
   {
     name: "git",
     icon: git,
   },
-  // {
-  //   name: "figma",
-  //   icon: figma,
-  // },
   {
     name: "docker",
     icon: docker,
@@ -142,6 +139,26 @@ const technologies = [
     name: "openai",
     icon: openai,
   },
+  // {
+  //   name: "HTML 5",
+  //   icon: html,
+  // },
+  // {
+  //   name: "CSS 3",
+  //   icon: css,
+  // },
+  // {
+  //   name: "figma",
+  //   icon: figma,
+  // },
+  // {
+  //   name: "Tailwind CSS",
+  //   icon: tailwind,
+  // },
+  // {
+  //   name: "MongoDB",
+  //   icon: mongodb,
+  // },
 ];
 
 const experiences: experiencesType[] = [
@@ -214,71 +231,121 @@ const testimonials: testimonialsType[] = [
   },
 ];
 
-const projects: projectsType[] = [
+const workProjects: projectsType[] = [
   {
-    name: "Car Rent",
+    name: "Real Estate website",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      `Frontend/Backend support. New UI components creation. 
+      One of the highlits was a creation of the leaflet that is generated and being returned from the backend as a custom HTML page or a PDF file. 
+      And depending on the user status, data can be returned and displayed with a different content. 
+      On the fronted side, user can choose either to view HTML, download PDF or to share leaflet link.`,
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
       },
       {
         name: "tailwind",
         color: "pink-text-gradient",
       },
+      {
+        name: "nest.js",
+        color: "green-text-gradient",
+      },
     ],
-    image: carrent,
-    project_link_logo: github,
-    source_code_link: "https://github.com/",
+    image: estating,
+    project_link_logo: internet,
+    source_code_link: "https://estating.com",
   },
   {
-    name: "Job IT",
+    name: "Corporate website - UHP Europe",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      `Created a corporate multi-language website from scratch 
+      with an adaptive layout, dynamic news page, maps, and feedback form.`,
     tags: [
       {
-        name: "react",
+        name: "next.js",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "redux",
         color: "green-text-gradient",
       },
       {
         name: "scss",
         color: "pink-text-gradient",
       },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
       {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
+        name: "typescript",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: uhp,
+    project_link_logo: internet,
+    source_code_link: "https://uhpeurope.com",
+  },
+  {
+    name: "NFT trading platform",
+    description:
+      `Develop and implement new functionality/features for the NFT trading platform. 
+      Main goal of a new feature was to gamify users spendings and increased user interactivity with the platform using XP points, ranking and reward system not only for general users but also for the potential crypto investors. 
+      This approach helped to gain 2000 new unique users in 1 month and increased company revenue on $50k.`,
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "GraphQL",
+        color: "green-text-gradient",
+      },
+      {
+        name: "TailwindCSS",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "NestJS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: pokmi,
+    project_link_logo: internet,
+    source_code_link: "https://pokmi.com",
+  },
+  {
+    name: "AI chatbot 'apt-chatapp'",
+    description:
+    `Project description. AI chatbot created from scratch using 
+    OpenAI API (GPT-4), React.js, Node.js, Sass, MongoDB, Firebase, and MobX with 100 unique daily users.`,
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "scss",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "firebase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "node.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "gpt-4",
+        color: "green-text-gradient",
+      },
+    ],
+    image: apt,
+    source_code_link: "",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, testimonials, workProjects };
