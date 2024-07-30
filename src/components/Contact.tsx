@@ -54,10 +54,12 @@ const Contact = () => {
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >       
         <div className="flex flex-col sm:flex-row sm:items-center">
-          <p className='sectionSubText sm:mr-3 mb-3 sm:mb-0'>Want to get my CV in PDF?</p>
+          <p className='sectionSubText sm:mr-3 mb-3 sm:mb-0'>
+            Want to get my CV?
+          </p>
           <button
             onClick={ handleGetCV }
-            className='bg-black-500 py-3 px-3 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-secondary'
+            className='bg-black-500 py-3 px-3 rounded-xl outline-none w-fit hover:scale-95 text-white font-bold shadow-md shadow-secondary'
           >
             Download it now
           </button>
