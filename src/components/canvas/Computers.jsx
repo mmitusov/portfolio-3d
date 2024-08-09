@@ -1,5 +1,5 @@
-import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber"; //Просто пустой канвас в который мы можем что-то поместить
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber"; //Просто пустой канвас в который мы можем что-то поместить
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei"; //Вспомогательные инструменты которыми мы будем "рисовать" на пустом канвасе. "useGLTF" помогает ипортировать 3D модели
 
 // We can not use HTML tags inside the canvas. To solve this, we wraped the CanvasLoader inside "import { Html } from "@react-three/drei";"
@@ -8,11 +8,18 @@ import CanvasLoader from "../Loader";
 const Computers = ({ isMobile }) => {
   // Не забываем, что абсолютный путь в Next.js автоматически начинается с папки 'public'. Поэтому путь к файлу выглядет следующим образом 
   const computer = useGLTF("/desktop_pc/scene.gltf");
-
+  const meshRef = useRef();
+  // Slow rotation
+  useFrame(() => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += 0.1;
+    }
+  });
+  
   //Работая с ThreeJS вместо <div> мы используем <mesh>. Внутри <mesh> важно создать освещение, иначе мы ничего не будем видеть
   // Чтобы отобразить модельку, далее мы должны поместить ее внутри Canvas. Не обязательно, но создадим ниже отдельный компонентик для этого
   return (
-    <mesh>
+    <mesh ref={meshRef}>
       <hemisphereLight intensity={2} groundColor='black' />
       <spotLight
         position={[-20, 50, 10]}
