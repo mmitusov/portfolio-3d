@@ -8,18 +8,11 @@ import CanvasLoader from "../Loader";
 const Computers = ({ isMobile }) => {
   // Не забываем, что абсолютный путь в Next.js автоматически начинается с папки 'public'. Поэтому путь к файлу выглядет следующим образом 
   const computer = useGLTF("/desktop_pc/scene.gltf");
-  const meshRef = useRef();
-  // Slow rotation
-  useFrame(() => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += 0.1;
-    }
-  });
   
   //Работая с ThreeJS вместо <div> мы используем <mesh>. Внутри <mesh> важно создать освещение, иначе мы ничего не будем видеть
   // Чтобы отобразить модельку, далее мы должны поместить ее внутри Canvas. Не обязательно, но создадим ниже отдельный компонентик для этого
   return (
-    <mesh ref={meshRef}>
+    <mesh>
       <hemisphereLight intensity={2} groundColor='black' />
       <spotLight
         position={[-20, 50, 10]}
@@ -66,7 +59,7 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop='demand'
+      frameloop='always'
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
@@ -74,6 +67,8 @@ const ComputersCanvas = () => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
+          autoRotate
+          autoRotateSpeed={0.2} 
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
