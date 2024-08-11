@@ -45,7 +45,7 @@ const Ball = ({icon}) => {
 const BallCanvas = ({ icon }) => {
   return (
     <Canvas
-      frameloop='demand'
+      frameloop='always' //animation would be available always and not only on specific events
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
     >
