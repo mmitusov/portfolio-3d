@@ -22,8 +22,9 @@ import {
   figma,
   mongodb,
   tailwind,
+  newline_logo,
+  argus_logo,
   newline,
-  argus,
   estating,
   uhp,
   apt,
@@ -165,7 +166,7 @@ const experiences: experiencesType[] = [
   {
     title: "AI Full Stack Engineer",
     company_name: "/newline",
-    icon: newline,
+    icon: newline_logo,
     iconBg: "#E6DEDD",
     date: "Oct. 2023 - Present",
     points: [
@@ -178,7 +179,7 @@ const experiences: experiencesType[] = [
   {
     title: "Middle Full Stack JS Developer",
     company_name: "Argus Soft",
-    icon: argus,
+    icon: argus_logo,
     iconBg: "#383E56",
     date: "Now. 2022 - Oct. 2023",
     points: [
@@ -233,6 +234,28 @@ const testimonials: testimonialsType[] = [
 
 const workProjects: projectsType[] = [
   {
+    name: "Large educational platform",
+    description:
+      `Creating and shipping LLM, backend and frontend products/features.`,
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "nest.js",
+        color: "green-text-gradient",
+      },
+    ],
+    image: newline,
+    project_link_logo: internet,
+    source_code_link: "https://www.newline.co",
+  },
+  {
     name: "Real Estate website",
     description:
       `Frontend/Backend support. New UI components creation. 
@@ -246,7 +269,7 @@ const workProjects: projectsType[] = [
       },
       {
         name: "tailwind",
-        color: "pink-text-gradient",
+        color: "blue-text-gradient",
       },
       {
         name: "nest.js",
@@ -264,20 +287,20 @@ const workProjects: projectsType[] = [
       with an adaptive layout, dynamic news page, maps, and feedback form.`,
     tags: [
       {
+        name: "typescript",
+        color: "pink-text-gradient",
+      },
+      {
         name: "next.js",
         color: "blue-text-gradient",
       },
       {
         name: "redux",
-        color: "green-text-gradient",
+        color: "blue-text-gradient",
       },
       {
         name: "scss",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "typescript",
-        color: "pink-text-gradient",
+        color: "blue-text-gradient",
       },
     ],
     image: uhp,
@@ -292,24 +315,24 @@ const workProjects: projectsType[] = [
       This approach helped to gain 2000 new unique users in 1 month and increased company revenue on $50k.`,
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "GraphQL",
-        color: "green-text-gradient",
-      },
-      {
-        name: "TailwindCSS",
-        color: "pink-text-gradient",
-      },
-      {
         name: "typescript",
         color: "pink-text-gradient",
       },
       {
-        name: "NestJS",
-        color: "pink-text-gradient",
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwind css",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "nest.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "graph ql",
+        color: "green-text-gradient",
       },
     ],
     image: pokmi,
@@ -328,7 +351,7 @@ const workProjects: projectsType[] = [
       },
       {
         name: "scss",
-        color: "pink-text-gradient",
+        color: "blue-text-gradient",
       },
       {
         name: "firebase",
@@ -340,7 +363,7 @@ const workProjects: projectsType[] = [
       },
       {
         name: "gpt-4",
-        color: "green-text-gradient",
+        color: "orange-text-gradient",
       },
     ],
     image: apt,
