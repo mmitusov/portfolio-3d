@@ -26,9 +26,10 @@ import nestjs from "./tech/nestjs.svg";
 import nextjs from "./tech/nextjs.svg";
 import python from "./tech/python.svg";
 
-import newline from "./company/newline (transparent).png";
-import argus from "./company/argus (transparent).png";
+import newline_logo from "./company/newline (transparent).png";
+import argus_logo from "./company/argus (transparent).png";
 
+import newline from "./projects/newline.jpg";
 import estating from "./projects/estating.jpg";
 import uhp from "./projects/uhp.jpg";
 import apt from "./projects/apt.jpg";
@@ -64,9 +65,10 @@ export {
   nextjs,
   python,
 
-  newline,
-  argus,
+  newline_logo,
+  argus_logo,
 
+  newline,
   estating,
   uhp,
   apt,
