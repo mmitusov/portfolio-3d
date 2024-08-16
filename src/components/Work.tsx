@@ -19,7 +19,7 @@ const Works = () => {
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
           Please take a look at the projects that I've worked on throughout my career.
-          Each project is briefly described and has code repository links or/and live demos. 
+          Each project is briefly described and has a live demo or/and code repository link. 
         </motion.p>
       </div>
 
