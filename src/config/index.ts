@@ -29,6 +29,7 @@ import {
   uhp,
   apt,
   pokmi,
+  apex_comfort
 } from "../../public/media";
 
 interface experiencesType {
@@ -236,7 +237,9 @@ const workProjects: projectsType[] = [
   {
     name: "Large educational platform",
     description:
-      `Creating and shipping LLM, backend and frontend products/features.`,
+      `Creating and shipping complex Frontend/Backend features. Which helped to create new ways to interact with educational content, 
+      added a social media aspect to the platform and motivated users to be more involved in the product ecosystem by using a gamification/rewards system.
+      Creating and shipping LLM features. Which gave a new way to interrupt the content and to automate some business processes.`,
     tags: [
       {
         name: "react",
@@ -342,8 +345,8 @@ const workProjects: projectsType[] = [
   {
     name: "AI chatbot 'apt-chatapp'",
     description:
-    `Project description. AI chatbot created from scratch using 
-    OpenAI API (GPT-4), React.js, Node.js, Sass, MongoDB, Firebase, and MobX with 100 unique daily users.`,
+      `Project description. AI chatbot created from scratch using 
+      OpenAI API (GPT-4), React.js, Node.js, Sass, MongoDB, Firebase, and MobX with 100 unique daily users.`,
     tags: [
       {
         name: "react",
@@ -368,6 +371,21 @@ const workProjects: projectsType[] = [
     ],
     image: apt,
     source_code_link: "",
+  },
+  {
+    name: "Online store 'Apex Comfort'",
+    description:
+      `The online store was created for a dealer of heating and cooling devices and their components from leading manufacturers in Europe and Ukraine.
+      Online store was build using such WordPress plugins as Contact Form 7, Google XML Sitemaps, MC4WP, Slider Revolution, WPBakery Page Builder and WPML CMS Nav.`,
+    tags: [
+      {
+        name: "WordPress",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: apex_comfort,
+    project_link_logo: internet,
+    source_code_link: "https://apex-comfort.com",
   },
 ];
 
