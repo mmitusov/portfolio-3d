@@ -34,6 +34,7 @@ import estating from "./projects/estating.jpg";
 import uhp from "./projects/uhp.jpg";
 import apt from "./projects/apt.jpg";
 import pokmi from "./projects/pokmi.jpg";
+import apex_comfort from "./projects/apex_comfort.jpeg";
 
 
 export {
@@ -73,4 +74,5 @@ export {
   uhp,
   apt,
   pokmi,
+  apex_comfort
 };
