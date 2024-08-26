@@ -9,7 +9,7 @@ const Computers = ({ isMobile }) => {
   // Не забываем, что абсолютный путь в Next.js автоматически начинается с папки 'public'. Поэтому путь к файлу выглядет следующим образом 
   const computer = useGLTF("/desktop_pc/scene.gltf");
   
-  //Работая с ThreeJS вместо <div> мы используем <mesh>. Внутри <mesh> важно создать освещение, иначе мы ничего не будем видеть
+  // Работая с ThreeJS вместо <div> мы используем <mesh>. Внутри <mesh> важно создать освещение, иначе мы ничего не будем видеть
   // Чтобы отобразить модельку, далее мы должны поместить ее внутри Canvas. Не обязательно, но создадим ниже отдельный компонентик для этого
   return (
     <mesh>
@@ -27,7 +27,7 @@ const Computers = ({ isMobile }) => {
         object={computer.scene}
         scale={isMobile ? 0.6 : 0.75}
         position={isMobile ? [0, -3, -1.9] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        rotation={[-0.01, -0.5, -0.1]} // To change angle of how model facing us
       />
     </mesh>
   );
