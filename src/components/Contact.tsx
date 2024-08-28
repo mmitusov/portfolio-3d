@@ -16,12 +16,12 @@ const Contact = () => {
     window.open('/resume_pdf/Maksym_Mitusov_CV.pdf', '_blank');
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setContactForm({name, value });
   };
   
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
     try {
@@ -101,7 +101,7 @@ const Contact = () => {
               name='message'
               value={contactFormState.message}
               onChange={handleChange}
-              placeholder='What you want to say?'
+              placeholder="Share your question here!"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
