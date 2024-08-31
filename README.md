@@ -63,7 +63,7 @@ const [contactForm, setContactForm] = useState({
 });
 setContactForm(prev => ({ ...prev, [name]: value }));  // This dynamically sets the key based on the variable `name`
 ```
-- `[name]: value` This syntax allows you to dynamically set a property on the object using the value of the name variable (it dynamically checks if the key already exists in the object). If the name already exists as a key in the object, it updates the value. If it doesn't exist, it adds a new key-value pair.
+- `[name]: value` This syntax allows you to dynamically set a property on the object using the value of the name variable (it dynamically checks if the key already exists in the object). If the name already exists as a key in the object, it updates the value. If it doesn't exist, it adds a new key-value pair. P.S. If you need to generate the key name dynamically based on a variable or some condition, using bracket notation ([key]: value) is the way to go.
 - `name: value` This syntax always creates a key named "name" (a literal string key), regardless of whether it's adding a new key or updating an existing one. This is not dynamic and does not use the value of the name variable.
 So, to dynamically set a key based on a variable: Use `[name]: value`. To set a key named "name": Use `name: value`.
 
