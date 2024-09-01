@@ -7,7 +7,9 @@ import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
   // Не забываем, что абсолютный путь в Next.js автоматически начинается с папки 'public'. Поэтому путь к файлу выглядет следующим образом 
-  const computer = useGLTF("mitusov-portfolio-3d/desktop_pc/scene.gltf");
+  // const computer = useGLTF("/desktop_pc/scene.gltf");
+  const computer = useGLTF(`${process.env.NEXT_PUBLIC_BASE_PATH}/desktop_pc/scene.gltf`);
+  console.log("computer", computer)
   
   // Работая с ThreeJS вместо <div> мы используем <mesh>. Внутри <mesh> важно создать освещение, иначе мы ничего не будем видеть
   // Чтобы отобразить модельку, далее мы должны поместить ее внутри Canvas. Не обязательно, но создадим ниже отдельный компонентик для этого
