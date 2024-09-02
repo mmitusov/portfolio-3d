@@ -5,7 +5,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Earth = () => {
-  const basePath = process.env.NODE_ENV === 'production' ? '/mitusov-portfolio-3d' : '';
+  const basePath = process.env.NODE_ENV === 'production' ? process.env.GIT_HUB_PAGES_BASE_PATH : '';
   const earth = useGLTF(`${basePath}/planet/scene.gltf`);
 
   return (
