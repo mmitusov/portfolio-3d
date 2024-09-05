@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Maksym | Portfolio',
   description: 'Maksym Mitusov | Portfolio',
   icons: {
-    icon: '/media/logo.svg',
+    icon: '/media/my_logo.svg',
   },
 };
 
