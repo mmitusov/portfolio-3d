@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const basePath = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_GIT_HUB_PAGES_BASE_PATH : '';
 
 const config: Config = {
   content: [
@@ -10,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('/media/herobg.png')", // It automatically start's search path from the 'public' folder
+        'hero-pattern': `url('${basePath}/media/herobg.png')`, // It automatically start's search path from the 'public' folder
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
