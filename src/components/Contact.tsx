@@ -14,7 +14,7 @@ const Contact = () => {
 
   const handleGetCV = () => {
     const basePath = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_GIT_HUB_PAGES_BASE_PATH : '';
-    window.open(`${basePath}/resume_pdf/Maksym_Mitusov_CV.pdf', '_blank`);
+    window.open(`${basePath}/resume_pdf/Maksym_Mitusov_CV.pdf`, '_blank');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
