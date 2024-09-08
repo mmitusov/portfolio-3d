@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   title: 'Maksym | Portfolio',
   description: 'Maksym Mitusov | Portfolio',
   icons: {
-    icon: `${basePath}/media/my_logo.svg?v=1.0`,
+    icon: `${basePath}/media/my_logo.svg`,
+    // icon: `${basePath}/media/my_logo.svg?v=1.0`,
   },
 };
 
