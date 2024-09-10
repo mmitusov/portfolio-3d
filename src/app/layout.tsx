@@ -9,10 +9,9 @@ const basePath = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC
 
 export const metadata: Metadata = {
   title: 'Maksym | Portfolio',
-  description: 'Maksym Mitusov | Portfolio',
+  description: 'Maksym Mitusov Portfolio',
   icons: {
     icon: `${basePath}/media/my_logo.svg`,
-    // icon: `${basePath}/media/my_logo.svg?v=1.0`,
   },
 };
 
