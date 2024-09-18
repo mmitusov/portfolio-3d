@@ -78,6 +78,28 @@ To save some Readme space all notes about handy tricks and setup process would b
 ### Let to download my CV
 Added download button in Contact.tsx component
 
+### How to publish Next.js to GitHub Pages
+GitHub Pages does not support Next.js directly. When deploying a Next.js app to GitHub Pages, we nned to publish only the build output because GitHub Pages can serve only a static content (HTML, CSS, JS, and assets). It doesn’t support server-side functionality like APIs or SSR. Therefore, your app needs to be converted to static HTML files, making it a static site rather than a dynamic one. But this way we alos loose all SSR and API functionality.
+
+Steps to Prepare a Next.js App for Publishing on GitHub Pages:  
+1. Configure Next.js for Static Export. In your next.config.js, ensure you're using the output: 'export' option to export the app as static files.
+```
+const nextConfig = {
+  output: 'export',
+  images: {
+    unoptimized: true, // Since GitHub Pages doesn’t support Next.js image optimization
+  },
+};
+export default nextConfig;
+```
+2. GitHub Pages often hosts websites at paths like `/your-repo-name`. That's why after publishing path to some files might be broken and cause issues. To handle this, set the basePath in `next.config.js`. But in our case we don't need this.
+3. Note that `next.config.js basePath` controls Next.js routing for pages and APIs. Static files in the `public` folder, like images or PDFs, are not automatically prefixed by the `basePath` setting. They are served from the root of the domain (e.g., /resume_pdf/file.pdf) regardless of the basePath config. Thus, we need manually adjust the paths in our component for such cases like:
+```
+const basePath = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_GIT_HUB_PAGES_BASE_PATH : '';
+const earth = useGLTF(`${basePath}/planet/scene.gltf`);
+```  
+P.S. `../public/planet/scene.gltf` won’t work because you can't directly reference the public folder in Next,js like that. But when you create an `index.js` file inside the `public` folder of your Next.js app, you effectively turn that file into a module that can be imported from other parts of your application like `../../public/media`. While this approach may work, it's not the conventional way of using the `public` directory in Next.js. And importing a large number of files through an index file can lead to larger bundle sizes, especially if you end up importing more files than needed. Typically, in Next.js you access assets directly via URLs (e.g., /media/logo.png).
+
 ДОБАВИТЬ МУЛЬТИЯЗЫЧНОСТЬ
 
 ОПТИМИЗИРОВАТЬ SSR
@@ -93,3 +115,5 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 ```
+
+3. basePath and cashing
