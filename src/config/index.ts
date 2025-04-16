@@ -92,6 +92,9 @@ const services = [
   },
 ];
 
+// Let me explain why we don't render all technologies at once
+// This is a common problem when dealing with multiple WebGL contexts in Three.js, especially when rendering many 3D objects simultaneously. 
+// The error occurs because browsers have a limited number of WebGL contexts they can maintain at once.
 const technologies = [
   {
     name: "Python",
