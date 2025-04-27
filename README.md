@@ -16,7 +16,7 @@ react-redux
 # Main app description
 Сперва почистим проэкт. Удалим вся лишенее из стартовой страницы 'page.tsx'. Далее разделим все файлы, что были сваленны в одну кучу в папке 'app', по разным папкам, каждая из которых будет отвечать за свой функционал. Глобальные стили переместим в созданую нами папку 'styles'. А favicon.ico переместим в глобальную папку 'public'. Мы можем хранить favicon.ico как папке '/public', так и в корне папки '/app'. И так, и так - Next сможет считывать нашу картинку. И создадим папку 'components', где будем хранить все компоненты.
 
-Напомню, что сама папка 'app' будет отвечать за роутинт (хранить все основные страницы нашего приложения), а также за лейаут, который будет отображаться на каждой из этих страниц. Все лишниее для чистоты проэекта из этой папки лучше убрать. Если мы хотим создать новый раут, то нам просто нужно создать папку внутри 'app' и дать ей имя. Ее имя и будет названием раута. А внутри созданой папки создать файл 'page.tsx'.
+Напомню, что сама папка 'app' будет отвечать за роутинт (хранить все основные страницы нашего приложения), а также за лейаут, который будет отображаться на каждой из этих страниц. Все лишниее для чистоты проэекта из этой папки лучше убрать. Если мы хотим создать новый роут, то нам просто нужно создать папку внутри 'app' и дать ей имя. Ее имя и будет названием роута. А внутри созданой папки создать файл 'page.tsx'.
 
 После чего мы начнем устанавливать нужные нам библиотеки. У нас не будет уставревших библиотек. Но если бы такая и имелась бы, то мы устанавливали ее бы с флагом --legacy-peer-deps: "npm install --legacy-peer-deps <lib_name>".
 
@@ -47,6 +47,8 @@ const { Navbar, About, etc.. } = Components;
 
 ### "Tech" секция 
 Следующая на очереди - секция "Tech". Сдесь отобразим 3D шарики с картинками технологий. Важно заметить, что "useTexture" принимает пареметром только путь к картике в виде строки. А Next.js по дефолту импортирует картинки как объект. Но один из параметров этого объекта - это нужный нам путь к картике. А точнее - `icon.src`. Им и воспользовались.
+
+We can't Display all technologies/balls at once. This is a common problem when dealing with multiple WebGL contexts in Three.js, especially when rendering many 3D objects simultaneously. The error occurs because browsers have a limited number of WebGL contexts they can maintain at once.
 
 ### "Feedback" секция 
 Следующая на очереди - секция "Feedback". Для карточек с фидбеком применим отрецательную маржу `-mt-20`. Таким образом контейнер с карточками залезет на соседний контейнер и создаст эффект будто два елемента накладываются друг на друга.
@@ -107,6 +109,15 @@ P.S. `../public/planet/scene.gltf` won’t work because you can't directly refer
 # Debuging section
 1. 'THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The "position" attribute is likely to have NaN values' warning is appeared because following function generates NaN time to time:  
 `const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.2 }));`
+
+Fix:
+I've modified the code to use 5001 points instead of 5000. Here's why this fixes the issue:
+Each point in 3D space requires 3 values (x, y, z)
+The original value of 5000 divided by 3 gives 1666.66... (not a whole number). It expects the positions array to have a length that's divisible by 3.
+This meant the last point was incomplete, causing NaN values
+By using 5001, we ensure we have complete sets of x, y, z coordinates (5001 ÷ 3 = 1667 complete points)
+This have resolved the warning about NaN values.
+
 
 2. The cause of the "Warning: Extra attributes from the server: style at html" is the of the following packege:  
 ```
