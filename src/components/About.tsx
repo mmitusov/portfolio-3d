@@ -1,6 +1,6 @@
 import SectionWrapper from './hoc/SectionWrapper'
 import Image from 'next/image'
-import { Tilt } from 'react-tilt'
+import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion"
 import { services } from '@/config'
 import { fadeIn, textVariant } from '@/utils/motion'
@@ -34,11 +34,10 @@ const About = () => {
           <Tilt 
             key={service.title} 
             className='xs:w-[250px] w-full'
-            options={{
-              max: 15,
-              scale: 1.03,
-              speed: 2500,
-            }}
+            tiltMaxAngleX={15}   // Max tilt on the X-axis
+            tiltMaxAngleY={15}   // Max tilt on the Y-axis (you can set this if needed)
+            scale={1.02}        // Scale when tilted
+            transitionSpeed={2000}
           >
             <motion.div
               variants={fadeIn("right", "spring", index * 0.5, 0.75)}
