@@ -1,4 +1,4 @@
-import { Tilt } from 'react-tilt'
+import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion";
 
 import SectionWrapper from './hoc/SectionWrapper';
@@ -28,11 +28,10 @@ const Works = () => {
         {workProjects.map((project, index) => (
           <motion.div key={`project-${index}`} variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
             <Tilt
-              options={{
-                max: 5,
-                scale: 1.02,
-                speed: 2000,
-              }}
+              tiltMaxAngleX={5}   // Max tilt on the X-axis
+              tiltMaxAngleY={5}   // Max tilt on the Y-axis (you can set this if needed)
+              scale={1.02}        // Scale when tilted
+              transitionSpeed={2000}
               className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
             >
               <div className='relative w-full h-[230px]'>
