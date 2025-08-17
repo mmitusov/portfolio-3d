@@ -18,7 +18,7 @@ import Image from "next/image";
 // Для этого создадим кастомный хук useIsInView. И как только мы доскролим до секции Experience, он поменяет ее параметр на "visible={true}"
 const Experience = () => {
   const timelineElementRef = useRef<HTMLInputElement | null>(null);
-  const isInView = useIsInView(timelineElementRef);
+  const isInView = useIsInView(timelineElementRef as React.RefObject<Element>);
 
   return (
     <div ref={timelineElementRef}>
