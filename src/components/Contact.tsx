@@ -24,26 +24,26 @@ const Contact = () => {
   
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setLoading(true)
-    try {
-      const res = await fetch('/api/email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(contactFormState),
-      });
+    // setLoading(true)
+    // try {
+    //   const res = await fetch('/api/email', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(contactFormState),
+    //   });
 
-      if (res.ok) {
-        setLoading(false);
-        resetContactForm();
-        alert('Email sent successfully!');
-      } else {
-        alert('Error while sending email. Try onother time!');
-      }
-    } catch (error) {
-      alert('Error while sending email. Try onother time!');
-    }
+    //   if (res.ok) {
+    //     setLoading(false);
+    //     resetContactForm();
+    //     alert('Email sent successfully!');
+    //   } else {
+    //     alert('Error while sending email. Try onother time!');
+    //   }
+    // } catch (error) {
+    //   alert('Error while sending email. Try onother time!');
+    // }
   }
 
   return (
