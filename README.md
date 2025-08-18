@@ -100,7 +100,24 @@ export default nextConfig;
 const basePath = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_GIT_HUB_PAGES_BASE_PATH : '';
 const earth = useGLTF(`${basePath}/planet/scene.gltf`);
 ```  
-P.S. `../public/planet/scene.gltf` won’t work because you can't directly reference the public folder in Next,js like that. But when you create an `index.js` file inside the `public` folder of your Next.js app, you effectively turn that file into a module that can be imported from other parts of your application like `../../public/media`. While this approach may work, it's not the conventional way of using the `public` directory in Next.js. And importing a large number of files through an index file can lead to larger bundle sizes, especially if you end up importing more files than needed. Typically, in Next.js you access assets directly via URLs (e.g., /media/logo.png).
+P.S. `../public/planet/scene.gltf` won’t work because you can't directly reference the public folder in Next.js like that. But when you create an `index.js` file inside the `public` folder of your Next.js app, you effectively turn that file into a module that can be imported from other parts of your application like `../../public/media`. While this approach may work, it's not the conventional way of using the `public` directory in Next.js. And importing a large number of files through an index file can lead to larger bundle sizes, especially if you end up importing more files than needed. Typically, in Next.js you access assets directly via URLs (e.g., /media/logo.png).
+
+⚠️ Notes about Next.js 15
+
+Starting from **Next.js 15**, the framework became more strict about **static exports (`output: 'export'`)**.
+
+- API routes and SSR features (`getServerSideProps`, server actions, etc.) are **not allowed** in static export mode.
+- If an API route exists (e.g., `/app/api/...`) but is not configured with `dynamic = "force-static"` or `revalidate`, the build will fail.
+- This makes hosting on platforms like **GitHub Pages** (which only support static files) trickier compared to earlier Next.js versions.
+
+**Our approach for this project:**
+
+Since we don’t need server functionality right now, we:
+
+1. Disabled API calls in the client code by commenting out `fetch('/api/...')` in the form handler.
+2. Kept the API folder for future use, but avoided calling it when building statically.
+3. Console out `handleSubmit` in Contact.tsxvfor now
+3. This way, the project builds cleanly with `output: 'export'` and can be deployed to GitHub Pages without errors.
 
 ДОБАВИТЬ МУЛЬТИЯЗЫЧНОСТЬ
 
